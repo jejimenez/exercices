@@ -1,0 +1,64 @@
+
+public class LinkedList {
+
+	Node head;
+	
+	public Node add(int value){
+		Node node = new Node(value, head);
+		this.head = node;
+		return this.head;
+	}
+	
+	public void remove(Node node){
+		Node current = this.head;
+		Node previous = null;
+		while(current != null){
+			if(current == node){
+				break;
+			}
+			previous = current;
+			current = current.getNext();
+		}
+		if(current == null) System.out.println("No se encontró el objeto "+node.getVal()); 
+		if(previous == null) this.head = current;
+		else previous.setNext(current.getNext());
+	}
+	
+	public Node getPrior(){
+		return this.head;
+	}
+	
+	public Node getNext(Node node){
+		Node current = this.head;
+		while(current != null){
+			if(current == node){
+				break;
+			}
+		}
+		if(current == null){ System.out.println("No se encontró el objeto "+node.getVal()); return null;}
+		else return current;
+	}
+	
+	public static void main(String[] arg){
+		LinkedList ld = new LinkedList();
+		ld.add(111);
+		ld.add(222);
+		Node n =ld.add(333);
+		ld.add(444);
+		ld.add(555);
+		ld.add(111);
+		ld.add(123);	
+		Node current = ld.getPrior();
+		
+		while(current != null){
+			System.out.println(current.getVal());
+			current = current.getNext();
+		}
+		ld.remove(n);
+		current = ld.getPrior();
+		while(current != null){
+			System.out.println(current.getVal());
+			current = current.getNext();
+		}
+	}
+}
