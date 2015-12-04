@@ -1,0 +1,15 @@
+
+num = input(int())
+
+strn = ''
+val = 0
+for i in num:
+    strn +=  i 
+    if num[-1] != i:
+        strn +=  ' + '
+    val += int(i)
+
+strn = strn
+
+
+print(strn+ " = " +str(val))
