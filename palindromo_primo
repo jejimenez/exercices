@@ -1,0 +1,21 @@
+
+def es_primo(n):
+    count = 0
+    for i in range(2,int(n/2)+1):
+        if n % i == 0 :
+            count += 1
+        if count >= 1:
+            return False
+    return True
+
+#val = 1003001
+#val = 102501
+num = int(input())
+
+print(str(es_primo(num)))
+
+for val in range(num,1000001):
+    if es_primo(val) and str(val)[::-1] == str(val) :
+        print(val)
+        break
+print('fin')
