@@ -1,17 +1,13 @@
-
 num = input(int())
+
 strn = ''
 val = 0
-n = 1
-l = len(num)
-for i in num:
+ln = len(num)
+for n in range(0,ln):
+    i = num[n]
     strn +=  i 
-    if n != l:
+    if n != ln-1:
         strn +=  ' + '
     val += int(i)
-    n += 1
-
-strn = strn
-
 
 print(strn+ " = " +str(val))
